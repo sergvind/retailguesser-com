@@ -1,0 +1,12 @@
+---
+import { business } from '../data/site';
+---
+<address class="legal-contact">
+  <strong>{business.legalName}</strong><br />
+  {business.address.street}<br />
+  {business.address.city}<br />
+  Phone: <a href={business.phoneHref}>{business.phone}</a><br />
+  Email: <a href={`mailto:${business.emails.sales}`}>{business.emails.sales}</a><br />
+  General inquiries: <a href={`mailto:${business.emails.general}`}>{business.emails.general}</a><br />
+  Support: <a href={`mailto:${business.emails.support}`}>{business.emails.support}</a>
+</address>

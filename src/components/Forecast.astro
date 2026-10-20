@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="forecast-scene">
+  <div class="scene-label"><span class="status-dot"></span> A LITTLE CLARITY GOES A LONG WAY</div>
+  <div class="signal-card">
+    <span class="signal-icon"><Icon name="spark" size={19} /></span>
+    <span><strong>Spot the signal.</strong><small>Get ahead of what’s next.</small></span>
+    <span class="signal-check"><Icon name="check" size={15} /></span>
+  </div>
+  <figure class="forecast-card">
+    <figcaption>
+      <div><span class="chart-eyebrow">THE BIGGER PICTURE</span><h2>Your next growth opportunity.</h2></div>
+      <span class="chart-menu" aria-hidden="true"><Icon name="trend" size={19} /></span>
+    </figcaption>
+    <div class="chart-meta"><span>Consumer demand outlook</span><span class="chart-period">6-month view</span></div>
+    <div class="chart-legend"><span><i></i>Observed</span><span><i class="dashed"></i>Forecast</span></div>
+    <svg class="demand-chart" viewBox="0 0 480 235" preserveAspectRatio="none" role="img" aria-labelledby="demand-title demand-description">
+      <title id="demand-title">An illustrative consumer demand forecast</title>
+      <desc id="demand-description">A sample demand index rises from January through April, with a forecast of further growth in May and June. This illustration does not represent actual client data.</desc>
+      <defs>
+        <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a7174" stop-opacity=".14"/><stop offset="100%" stop-color="#0a7174" stop-opacity="0"/></linearGradient>
+        <pattern id="forecast-pattern" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><line x1="0" y1="0" x2="0" y2="7" stroke="#dae5dc" stroke-width="1"/></pattern>
+      </defs>
+      <rect x="301" y="12" width="166" height="180" rx="4" fill="url(#forecast-pattern)"/>
+      <g stroke="#e8ece7" stroke-dasharray="3 5"><path d="M37 30H467M37 70H467M37 110H467M37 150H467M37 190H467"/></g>
+      <g fill="#7c8985" font-family="IBM Plex Sans, sans-serif" font-size="10"><text x="8" y="34">100</text><text x="14" y="74">80</text><text x="14" y="114">60</text><text x="14" y="154">40</text><text x="14" y="194">20</text></g>
+      <path d="M40 158C57 161 67 143 85 147S113 128 131 132 158 109 175 116 203 91 219 96 251 96 268 77 287 82 305 66L305 193H40Z" fill="url(#chart-fill)"/>
+      <path d="M40 158C57 161 67 143 85 147S113 128 131 132 158 109 175 116 203 91 219 96 251 96 268 77 287 82 305 66" fill="none" stroke="#0a7174" stroke-width="3" stroke-linecap="round"/>
+      <path d="M305 66C331 59 341 65 361 50S389 50 407 36 435 33 460 17" fill="none" stroke="#0a7174" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round"/>
+      <circle cx="305" cy="66" r="12" fill="#0a7174" opacity=".10"/><circle cx="305" cy="66" r="5" fill="#0a7174" stroke="white" stroke-width="2"/>
+      <g fill="#7c8985" font-family="IBM Plex Sans, sans-serif" font-size="10" text-anchor="middle"><text x="40" y="216">JAN</text><text x="125" y="216">FEB</text><text x="210" y="216">MAR</text><text x="295" y="216">APR</text><text x="380" y="216">MAY</text><text x="460" y="216">JUN</text></g>
+    </svg>
+    <div class="chart-insight"><span class="insight-dot"></span><span>See the trend. Make your move.</span><Icon size={16} name="diagonal" /></div>
+  </figure>
+  <div class="clarity-card"><span class="clarity-icon"><Icon name="layers" size={21} /></span><div><strong>Data → direction</strong><span>Insights you can actually use.</span></div></div>
+  <div class="scene-footnote"><span class="scene-cross" aria-hidden="true">+</span><span>Illustrative data. Real possibilities.</span><span class="scene-cross" aria-hidden="true">+</span></div>
+</div>

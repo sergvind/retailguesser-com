@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { business } from '../data/site';
+const emailOptions = [
+  { label: 'Let’s grow your business', description: 'Consultations, services, and new opportunities.', email: business.emails.sales, icon: 'trend' },
+  { label: 'Just want to say hello?', description: 'General questions and a friendly introduction.', email: business.emails.general, icon: 'mail' },
+  { label: 'Here when you need us', description: 'Help and support for our existing clients.', email: business.emails.support, icon: 'audience' },
+];
+---
+<Layout title="Let’s talk" description="Contact Retail Guesser for a free consultation. Call (470) 286-4081 or email sales@retailguesser.com. Based at 317 E Capitol St Ste 200, Jackson, MS 39201.">
+  <section class="page-heading container"><p class="eyebrow"><span class="status-dot"></span> THE FIRST STEP IS A CONVERSATION</p><h1>You bring the ambition.<br /><span>We’ll bring the insight.</span></h1><p>Ready to make more of your retail data? Tell us about<br class="desktop-break" /> your business, your goals, and what’s on your mind.</p></section>
+  <section class="contact-section container">
+    <div class="contact-main"><p class="eyebrow">LET’S FIND YOUR NEXT OPPORTUNITY</p><h2>A clearer direction<br />starts here.</h2><p>Whether you’re looking to optimize an existing campaign or rethink your marketing strategy, we’d love to help. Email us to arrange a free discovery call.</p><a class="button" href={`mailto:${business.emails.sales}?subject=Let%E2%80%99s%20talk%20retail%20growth`}>Get a free consultation <Icon size={19} /></a><div class="discovery-details"><h3>What we’ll talk about</h3><p><Icon name="check" size={17} /> Your business and where you want to go</p><p><Icon name="check" size={17} /> Your current marketing challenges</p><p><Icon name="check" size={17} /> Opportunities to put your data to work</p></div></div>
+    <div class="contact-methods">{emailOptions.map(option => <article class="contact-method"><span class="contact-method-icon"><Icon name={option.icon} size={24} /></span><div><h3>{option.label}</h3><p>{option.description}</p><a href={`mailto:${option.email}`}>{option.email}<Icon size={17} name="diagonal" /></a></div></article>)}</div>
+  </section>
+  <section class="contact-details container"><div><span class="service-icon"><Icon name="phone" size={23} /></span><h2>Prefer a conversation?</h2><p>Give us a call. We’d love to hear from you.</p><a class="text-link" href={business.phoneHref}>{business.phone}<Icon name="diagonal" size={17} /></a></div><div><span class="service-icon"><Icon name="pin" size={23} /></span><h2>Rooted in Jackson.</h2><address>{business.address.street}<br />{business.address.city}</address><a class="text-link" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.address.street}, ${business.address.city}`)}`} target="_blank" rel="noopener noreferrer">Find us on the map <Icon name="diagonal" size={17} /><span class="sr-only"> (opens in a new tab)</span></a></div><div><span class="service-icon"><Icon name="clock" size={23} /></span><h2>When to reach us.</h2><p>{business.officeHours}<br />{business.weekendHours}</p><span class="contact-hours-note">All times Central Standard Time.</span></div></section>
+</Layout>

@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+interface Props { title?: string; text?: string; }
+const { title = 'Your next chapter starts with a clearer picture.', text = 'Let’s turn your retail data into a strategy that moves your business forward.' } = Astro.props;
+---
+<section class="cta-section container">
+  <div class="cta-panel">
+    <div class="cta-pattern" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="cta-copy">
+      <p class="eyebrow">LESS GUESSWORK. MORE POSSIBILITY.</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <a class="button button-white" href="/contact.html">Get a free consultation <Icon size={19} /></a>
+  </div>
+</section>

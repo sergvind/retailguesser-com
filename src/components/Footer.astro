@@ -1,0 +1,40 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { business, services } from '../data/site';
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-intro">
+        <Brand light />
+        <p>A clearer view of your customers.<br />A smarter way to grow.</p>
+        <span class="footer-location"><span class="status-dot"></span> Rooted in Jackson. Focused on retail.</span>
+      </div>
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <a href="/about.html">About us</a>
+        <a href="/#services">Our services</a>
+        <a href="/case-studies.html">Case studies</a>
+        <a href="/contact.html">Get in touch</a>
+      </div>
+      <div class="footer-column">
+        <h2>What we do</h2>
+        {services.map((service) => <a href={`/#${service.id}`}>{service.short}</a>)}
+      </div>
+      <div class="footer-column footer-contact">
+        <h2>Say hello</h2>
+        <a class="footer-email" href={`mailto:${business.emails.sales}`}>{business.emails.sales}<Icon size={15} name="diagonal" /></a>
+        <a href={`mailto:${business.emails.general}`}>{business.emails.general}</a>
+        <a href={`mailto:${business.emails.support}`}>{business.emails.support}</a>
+        <a href={business.phoneHref}>{business.phone}</a>
+        <address>{business.address.street}<br />{business.address.city}</address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {new Date().getFullYear()} {business.legalName} All rights reserved.</p>
+      <div><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>

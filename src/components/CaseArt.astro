@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+interface Props { kind: string; compact?: boolean; }
+const { kind, compact = false } = Astro.props;
+---
+<div class:list={['case-art', `art-${kind}`, { compact }]} aria-hidden="true">
+  {kind === 'sycamore' && <>
+    <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    <div class="store-object"><div class="store-roof"></div><div class="store-awning"><span></span><span></span><span></span><span></span><span></span></div><div class="store-front"><div class="store-window"><span></span><span></span></div><div class="store-door"></div></div><div class="store-base"></div></div>
+    <span class="art-badge"><Icon name="trend" size={15} /> A season of growth</span>
+    <span class="art-caption">SYCAMORE <small>HOME GOODS</small></span>
+  </>}
+  {kind === 'gulf-coast' && <>
+    <div class="contour contour-one"></div><div class="contour contour-two"></div><div class="contour contour-three"></div>
+    <div class="compass-object"><Icon name="compass" size={100} /></div>
+    <span class="art-badge"><Icon name="audience" size={15} /> Find your people</span>
+    <span class="art-caption">GULF COAST <small>OUTDOOR SUPPLY</small></span>
+  </>}
+  {kind === 'brightpath' && <>
+    <div class="network-object"><span class="network-center"><Icon name="store" size={44} /></span>{[0,1,2,3].map(n => <span class={`network-node node-${n}`}><Icon name="store" size={22} /></span>)}<span class="network-line line-one"></span><span class="network-line line-two"></span></div>
+    <span class="art-badge"><Icon name="channels" size={15} /> Better, together</span>
+    <span class="art-caption">BRIGHTPATH <small>RETAIL GROUP</small></span>
+  </>}
+  {kind === 'magnolia' && <>
+    <div class="art-orbit orbit-one"></div><div class="mini-bars">{[34,52,40,65,58,85,100].map(height => <span style={`height:${height}%`}></span>)}</div>
+    <span class="art-badge"><Icon name="analytics" size={15} /> Clarity at every step</span>
+    <span class="art-caption">MAGNOLIA <small>MARKET CO.</small></span>
+  </>}
+</div>
